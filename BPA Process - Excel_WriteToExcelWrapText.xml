@@ -1,17 +1,17 @@
 ﻿<process name="Excel_WriteToExcelWrapText" version="1.0" bpversion="6.10.1.35171" narrative="" byrefcollection="true" preferredid="f26b42f3-7d37-485a-be82-0602399df2e2">
   <view>
-    <camerax>0</camerax>
-    <cameray>486</cameray>
+    <camerax>-94</camerax>
+    <cameray>3</cameray>
     <zoom version="2">1.25</zoom>
   </view>
   <preconditions />
   <endpoint narrative="" />
   <stage stageid="6095bc71-f37d-46fe-bb4d-4c01d33b804c" name="Start" type="Start">
-    <display x="15" y="-195" />
+    <display x="15" y="-255" />
     <onsuccess>8ec5ba79-3677-46b9-9698-f323da4bfe5f</onsuccess>
   </stage>
   <stage stageid="42d304bf-95fd-4761-b87f-871b2e3dfa6e" name="End" type="End">
-    <display x="15" y="660" />
+    <display x="15" y="585" />
   </stage>
   <stage stageid="5da438ce-c314-4125-94dc-56c7f3134b8d" name="Stage1" type="ProcessInfo">
     <display x="-495" y="-165" w="150" h="90" />
@@ -51,12 +51,12 @@
       <input type="number" name="handle" narrative="The integer handle identifying the instance to be closed. Zero indicates the currently active instance." expr="[handle]" />
       <input type="flag" name="Save Changes" narrative="True to save the changes to the open workbooks on the instance, False to discard any changes. Default is False." expr="False" />
     </inputs>
-    <onsuccess>a4623ebe-968c-4113-bff4-d7f547343e95</onsuccess>
+    <onsuccess>42d304bf-95fd-4761-b87f-871b2e3dfa6e</onsuccess>
     <resource object="MS Excel VBO" action="Close Instance" />
   </stage>
   <stage stageid="fcbd657b-9ff7-4802-a9c8-a522241de437" name="Set Coll1.Field1" type="Calculation">
     <loginhibit onsuccess="true" />
-    <display x="15" y="-45" />
+    <display x="15" y="-105" />
     <onsuccess>f5150b26-6101-4f28-a3a4-746c3574ef44</onsuccess>
     <calculation expression="&quot;Check Offer successfull:;Supplier names unique; 15. Send to Approver:Business Exception:BRE:Total value of PO is NOT within threshold from excel file 'Checks to perform' ,Contains NOT OK Keywords for Check Address. Output comment is: #. FAK Self Assessment:&quot;&amp;NewLine()&amp;&#xA;NewLine()&amp;&#xA;&quot;Erforderlich: Ja&quot;&amp;NewLine()&amp;&#xA;&quot;Vorhanden: Nein and keyword 1 is: Vorhanden: Nein-NOT SENT TO APPROVER&quot;" stage="Coll1.Field1" />
   </stage>
@@ -155,7 +155,7 @@
   </stage>
   <stage stageid="44454fb0-0fc4-4f76-8dd1-b14dd9437450" name="Collections::Add Row" type="Action">
     <loginhibit onsuccess="true" />
-    <display x="15" y="-90" />
+    <display x="15" y="-150" />
     <inputs>
       <input type="text" name="Collection Name" friendlyname="Collection Name" narrative="The name of the collection to act upon" expr="&quot;Coll1&quot;" />
     </inputs>
@@ -163,10 +163,10 @@
     <resource object="Blueprism.AutomateProcessCore.clsCollectionActions" action="Add Row" />
   </stage>
   <stage stageid="f5150b26-6101-4f28-a3a4-746c3574ef44" name="Retry?" type="Decision">
-    <display x="15" y="0" />
+    <display x="15" y="-60" />
     <decision expression="[retry]&lt;[limit]" />
     <ontrue>55ba6b9a-7709-4264-a7db-cb6ae3673dcc</ontrue>
-    <onfalse>fc26104a-82c9-45ad-8eea-a3fc23bc93ea</onfalse>
+    <onfalse>0622cc11-0960-46ae-a81b-ded462fd5dac</onfalse>
   </stage>
   <stage stageid="16d33e10-90d1-4716-878c-427c3bda49a8" name="retry" type="Data">
     <loginhibit onsuccess="true" />
@@ -186,12 +186,12 @@
   </stage>
   <stage stageid="55ba6b9a-7709-4264-a7db-cb6ae3673dcc" name="Anchor48" type="Anchor">
     <loginhibit onsuccess="true" />
-    <display x="90" y="0" w="10" h="10" />
+    <display x="90" y="-60" w="10" h="10" />
     <onsuccess>7578306e-46a2-42db-88f3-c68ccb906654</onsuccess>
   </stage>
   <stage stageid="7578306e-46a2-42db-88f3-c68ccb906654" name="retry++" type="Calculation">
     <loginhibit onsuccess="true" />
-    <display x="90" y="-90" />
+    <display x="90" y="-150" />
     <onsuccess>44454fb0-0fc4-4f76-8dd1-b14dd9437450</onsuccess>
     <calculation expression="[retry]+1" stage="retry" />
   </stage>
@@ -268,7 +268,7 @@
   </stage>
   <stage stageid="8ec5ba79-3677-46b9-9698-f323da4bfe5f" name="Create Test Collection" type="Note">
     <narrative>Create Test Collection</narrative>
-    <display x="15" y="-135" w="120" h="30" />
+    <display x="15" y="-195" w="120" h="30" />
     <font family="Segoe UI" size="12" style="Bold" color="0000FF" />
     <onsuccess>44454fb0-0fc4-4f76-8dd1-b14dd9437450</onsuccess>
   </stage>
@@ -299,14 +299,14 @@
     <onsuccess>534cab04-9a1f-49b1-8a57-c62cf8dc229e</onsuccess>
     <resource object="Utility - Environment" action="Get User Name" />
   </stage>
-  <stage stageid="a4623ebe-968c-4113-bff4-d7f547343e95" name="Set test" type="Calculation">
+  <stage stageid="0622cc11-0960-46ae-a81b-ded462fd5dac" name="Set test2" type="Calculation">
     <loginhibit onsuccess="true" />
-    <display x="15" y="600" />
-    <onsuccess>42d304bf-95fd-4761-b87f-871b2e3dfa6e</onsuccess>
-    <calculation expression="&quot;test&quot;" stage="test" />
+    <display x="15" y="-15" />
+    <onsuccess>fc26104a-82c9-45ad-8eea-a3fc23bc93ea</onsuccess>
+    <calculation expression="&quot;test2&quot;" stage="test2" />
   </stage>
-  <stage stageid="ab633541-c2da-43ed-b734-0d8ab4f13a05" name="test" type="Data">
-    <display x="75" y="600" />
+  <stage stageid="bbd18ac6-b06b-4ec3-a8a5-59748928626d" name="test2" type="Data">
+    <display x="90" y="-15" />
     <datatype>text</datatype>
     <initialvalue />
     <private />
