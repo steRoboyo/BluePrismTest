@@ -1,7 +1,7 @@
 ﻿<process name="Excel_WriteToExcelWrapText" version="1.0" bpversion="6.10.1.35171" narrative="" byrefcollection="true" preferredid="f26b42f3-7d37-485a-be82-0602399df2e2">
   <view>
     <camerax>-94</camerax>
-    <cameray>-81</cameray>
+    <cameray>3</cameray>
     <zoom version="2">1.25</zoom>
   </view>
   <preconditions />
@@ -299,14 +299,14 @@
     <onsuccess>534cab04-9a1f-49b1-8a57-c62cf8dc229e</onsuccess>
     <resource object="Utility - Environment" action="Get User Name" />
   </stage>
-  <stage stageid="0622cc11-0960-46ae-a81b-ded462fd5dac" name="Set test" type="Calculation">
+  <stage stageid="0622cc11-0960-46ae-a81b-ded462fd5dac" name="Set test2" type="Calculation">
     <loginhibit onsuccess="true" />
     <display x="15" y="-15" />
     <onsuccess>fc26104a-82c9-45ad-8eea-a3fc23bc93ea</onsuccess>
-    <calculation expression="&quot;test&quot;" stage="test" />
+    <calculation expression="&quot;test2&quot;" stage="test2" />
   </stage>
-  <stage stageid="a6777cca-8b70-47f2-8126-a4e19f957989" name="test" type="Data">
-    <display x="-105" y="0" />
+  <stage stageid="bbd18ac6-b06b-4ec3-a8a5-59748928626d" name="test2" type="Data">
+    <display x="90" y="-15" />
     <datatype>text</datatype>
     <initialvalue />
     <private />
